@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+
+
+<!-- ソースコードのハイライト -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+
+<!-- Tex形式の数式をきれいに表示する -->
+<script type="text/javascript"
+src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script src="./parser.js" type="text/javascript"></script>
+<script type="text/javascript">
+window.onload=function(){
+  document.body.innerHTML = parse(document.getElementById('Markdown').textContent);
+
+  // Tex記法の数式をきれいに表示する
+  MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" } },
+    tex2jax: {
+      inlineMath: [['$', '$'], ["\\(", "\\)"]],
+      processEscapes: true
+    },
+    "HTML-CSS": { matchFontHeight: false },
+    displayAlign: "left",
+    displayIndent: "2em"
+  });
+  console.log(hljs);
+
+  // プログラムのハイライト
+  hljs.highlightAll();
+}
+
+// 3秒ごとにリロードMarkdownのスクリプトの中が書き換わったら再表示
+// window.addEventListener('load',function(){
+//   setInterval('location.reload()',3000);
+// });
+</script>
+</head>
+
+<body>
+<script type="text/plain" id="Markdown">
+
+# Markdown Parser!!(H1)
+この文章は__Markdown__で書いています  
+もとMarkdown文書は`index.html`を見て下さい
+
+Header 1 Example
+
+## 主に対応している表記
+- リスト
+  - 番号形式も可
+- 表
+- Header（＃つけるやつ）
+- 引用
+- pre記法
+  - highlight.jsを使って自動でSyntaxHilightingしてくれる
+- その他色々
+  - ~~打ち消し~~
+  - リンク（[Google](http://google.com)）
+  - **太字**
+  - `pre単語`
+  - 数式 $\int_0^{10}(x^2 + y^2)dxdy = 1$
+  - 画像
+  
+# h1 test
+## h2 test
+### h3 test
+#### h4 test
+
+リストテスト
+
+1. 番号付きリスト
+1. 番号付きリスト
+    - リスト
+        - リスト
+        - リスト
+    - リスト
+
+水平線：
+---
+
+表：
+
+|テーブル|左寄せ|中央寄せ|右寄せ|
+|---|:---|:---:|---:|
+| 行1 | かきくけこ | あいうえお | 123 |
+| 行2 | けこ       | えお       | 45  |
+
+
+pre記法：
+
+    スペース4つでpre文書になります。
+  タブ一つでもOK
+
+
+引用：
+> ここは引用です。  
+> > とすると二重引用です。  
+> > > 何重でもできます。  
+> > 引用の中にリストを入れることもできます。
+> > - hogehoge
+> > - hugahuga
+> >   1. test
+> >   1. test2
+> やったね！！
+
+
+プログラム：
+```c
+#include <iostream>
+int hoge = 0;
+for(int i=0; i<100; i++){
+  std::cout << i << std::endl;
+}
+```
+
+画像表示です。
+
+![画像表示のサンプル](https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png)
+
+</script>
+</body>
+</html>

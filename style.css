@@ -1,0 +1,130 @@
+/*Darkmode Markdown Document Preview Style*/
+/*version 1.0*/
+
+
+
+body {
+  color: #ffffff;
+  background-color: #333333;
+  font-size:16px;
+}
+
+a{color: #5ee;}
+a:hover, a:visited {color: #1cc;}
+
+
+h1{
+  font-size:30px;
+  font-weight:bolder;
+}
+
+
+h2 {
+  position: relative;
+  color:#000;
+  padding: 0.2em;
+  background: #eee;
+  font-size:25px;
+  margin:30px 0px 5px 2px;
+}
+
+h2:after {
+    position: absolute;
+    top: 100%;
+    left: 30px;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top: 12px solid #eee;
+}
+
+h3{
+  border-left:solid 10px #eee;
+  border-bottom:solid 3px #eee;
+  color:#000;
+  background: #333;
+  padding: 0.2em;
+  font-size:20px;
+  color:#fff;
+  margin:30px 0px 5px 2px;
+
+}
+
+h4{
+  border-left:solid 6px #ddd;
+  color:#000;
+  background: #333;
+  padding: 0.2em;
+  padding-left: 0.8em;
+  font-size:20px;
+  color:#fff;
+}
+
+
+
+hr{margin: 14px; color:#fff;}
+
+ul, ol{
+  margin: 7px 20px;
+  padding:0;
+}
+li ol, li ul{
+  margin: 0px 10px;
+  padding:0;
+}
+
+table {
+  border-collapse: collapse; /* セルの線を重ねる */
+  white-space: nowrap;
+  margin-left:10px;
+}
+
+th,td {
+  background: #000;/*背景色*/
+  border: solid 1px;
+  padding:0px 7px;
+}
+
+th{
+  color: #000;/*文字色*/
+  background: #ddd;/*背景色*/
+  font-weight :bold;
+  /* border-color:#bbbbbb; */
+}
+
+/* 
+pre{
+  margin:0;
+  padding:0;
+  background: #000;
+  border: solid 1px #aaa;
+  border-radius: 3px;
+  counter-reset: line;
+}
+
+code {
+  margin:5;
+  padding:5;
+  background: #000;
+  border: solid 1px #aaa;
+  border-radius: 5px;
+} */
+
+
+blockquote{
+  border-left: 3px solid #aaa;
+  margin: 10px;
+  padding: 0;
+  padding-left: 5px;
+}
+blockquote blockquote{ margin: 4px; }
+
+em{
+  font-style: oblique;
+}
+
+strong{
+  font-weight: bold;
+  color: yellow;
+}
